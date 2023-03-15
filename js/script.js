@@ -5,8 +5,7 @@ const {
 createApp({
     data() {
         return {
-            todos: [
-                {
+            todos: [{
                     text: `comprare il pane`,
                     done: false,
                 },
@@ -22,14 +21,29 @@ createApp({
                     text: `lavare la macchina`,
                     done: false,
                 },
-            ]
+            ],
+
+            newTodo: ``,
         }
     },
 
     methods: {
-        doneTask(index) {
-            this.todos.slice(index, 1)
-            console.log(`cliccato`)
+        deleteTask(index) {
+            this.todos.splice(index, 1);
+        },
+
+        addTodo() {
+            let newObject = {
+                text: this.newTodo,
+                done: false,
+            };
+
+            this.todos.push(newObject);
+            this.newTodo = ``;
+        },
+
+        doneTask() {
+
         }
     }
 

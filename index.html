@@ -14,13 +14,18 @@
 
     <div id="app">
         <ul v-for="(todo, todoIndex) in todos">
-            <li>
+            <li @click="doneTask()">
                 {{todo.text}}
-                <span  @click="doneTask(todoIndex)">
-                    <i class="fa-regular fa-circle-check"></i>
+                <span  @click="deleteTask(todoIndex)">
+                    <i class="fa-regular fa-trash-can"></i>
                 </span>
             </li>
         </ul>
+
+        <hr>
+
+        <input type="text" v-model="newTodo" @keyup.enter="addTodo()">
+        <button @click="addTodo()">Aggiungi</button>
     </div>
 
     <script src="js/script.js"></script>
