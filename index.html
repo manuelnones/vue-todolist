@@ -14,19 +14,19 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <div id="app">
-        <ul v-for="(todo, todoIndex) in todos">
+        <ul v-for="(todo, todoIndex) in todos" id="list">
             <li @click="doneTask(todo)" :class="todo.done == true ? `done` : ``">
-                {{todo.text}}
+                <span id="text">{{todo.text}}</span>
                 <span  @click="deleteTask(todoIndex)">
                     <i class="fa-regular fa-trash-can"></i>
                 </span>
             </li>
         </ul>
 
-        <hr>
+        <hr id="line">
 
-        <input type="text" v-model="newTodo" @keyup.enter="addTodo()">
-        <button @click="addTodo()">Aggiungi</button>
+        <input id="input-text" type="text" v-model="newTodo" @keyup.enter="addTodo()">
+        <button id="btn" @click="addTodo()">Aggiungi</button>
     </div>
 
     <script src="js/script.js"></script>
