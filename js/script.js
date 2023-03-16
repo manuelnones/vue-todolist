@@ -42,8 +42,12 @@ createApp({
             this.newTodo = ``;
         },
 
-        doneTask() {
-
+        doneTask(key) {
+            if (key.done == false) {
+                key.done = true;
+            } else {
+                key.done = false;
+            }
         }
     }
 
